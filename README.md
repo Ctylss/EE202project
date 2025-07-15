@@ -1,45 +1,41 @@
-# EE202project
-
-2025/7/15
-
-project/ # 專案根目錄
-├── backend/ # 後端專案 (Spring Boot)
-│ ├── .mvn/ # Maven Wrapper
-│ ├── .vscode/ # VS Code 專屬設定
-│ ├── src/ # 原始碼目錄
-│ │ ├── main/ # 主要程式碼
-│ │ │ ├── java/ # Java 程式碼
-│ │ │ │ └── com.project.backend/ # 主套件 (Package)
-│ │ │ │ ├── controller/ # 處理 HTTP 請求，回傳 JSON
-│ │ │ │ ├── dao/ # 資料庫存取層，處理資料增刪改查
-│ │ │ │ ├── model/ # 資料模型，與資料庫表格對應
-│ │ │ │ ├── service/ # 業務邏輯層，協調 controller 與 dao
-│ │ │ │ ├── util/ # 通用工具類別，例如日期處理
-│ │ │ │ └── BackendApplication.java # 應用程式啟動主類別
-│ │ │ └── resources/ # 設定檔與靜態資源
-│ │ │ ├── application.properties/yml # 應用程式主要設定檔
-│ │ │ ├── static/ # 靜態資源 (不建議，除非有特定需求)
-│ │ │ └── templates/ # 網頁模板 (如果後端有渲染頁面)
-│ │ └── test/ # 測試程式碼
-│ ├── .gitignore # Git 忽略提交檔案
-│ └── pom.xml # Maven 專案設定檔 (依賴管理)
+project/                     # 專案根目錄
+├── backend/                 # 後端專案 (Spring Boot)
+│   ├── .mvn/                # Maven Wrapper，用於統一 Maven 版本
+│   ├── .vscode/             # VS Code 編輯器設定
+│   ├── src/                 # 原始碼目錄
+│   │   ├── main/            # 主要應用程式程式碼
+│   │   │   ├── java/        # Java 程式碼
+│   │   │   │   └── com.project.backend/  # 主套件 (Package)，遵循反向域名慣例
+│   │   │   │       ├── controller/  # 控制器層：處理 HTTP 請求，協調業務邏輯
+│   │   │   │       ├── dao/         # 資料存取層：處理資料庫 CRUD 操作
+│   │   │   │       ├── model/       # 模型層：定義資料結構與實體
+│   │   │   │       ├── service/     # 服務層：實作核心業務邏輯
+│   │   │   │       ├── util/        # 工具類別：存放通用輔助函數
+│   │   │   │       └── BackendApplication.java # 應用程式啟動主類別
+│   │   │   └── resources/   # 設定檔與靜態資源
+│   │   │       ├── application.properties/yml # 應用程式主要設定檔
+│   │   │       ├── static/        # 靜態資源 (不建議，除非有特定需求)
+│   │   │       └── templates/     # 網頁模板 (如果後端有渲染頁面)
+│   │   └── test/            # 測試程式碼目錄
+│   ├── .gitignore           # Git 忽略提交檔案設定
+│   └── pom.xml              # Maven 專案管理檔，定義依賴與建置配置
 │
-└── frontend/ # 前端專案 (Vue.js)
-├── node_modules/ # 存放第三方函式庫
-├── public/ # 存放靜態資源，例如 index.html, favicon
-├── src/ # 原始碼目錄
-│ ├── assets/ # 存放靜態資源，例如圖片、字體、全域 CSS
-│ ├── components/ # 存放可重用的 UI 組件 (按鈕, 導航欄等)
-│ │ ├── base/ # 基礎組件
-│ │ └── common/ # 通用組件
-│ ├── router/ # Vue Router 設定，管理所有頁面路由
-│ ├── services/ # 封裝與後端 API 互動的邏輯
-│ │ └── api.js # 處理資料請求與響應
-│ ├── store/ # Vuex 或 Pinia 狀態管理，類似後端的資料中心
-│ ├── utils/ # 存放通用工具函數 (格式化、驗證等)
-│ ├── views/ # 存放頁面級組件 (透過路由切換的頁面)
-│ │ ├── HomeView.vue # 首頁
-│ │ └── LoginView.vue# 登入頁
-│ └── App.vue # 應用程式的根組件
-├── .gitignore # Git 忽略提交檔案
-└── package.json # npm 專案設定檔 (依賴與腳本)
+└── frontend/                # 前端專案 (Vue.js)
+    ├── node_modules/        # 存放 npm 安裝的第三方函式庫
+    ├── public/              # 存放靜態資源，例如 index.html, favicon
+    ├── src/                 # 原始碼目錄
+    │   ├── assets/          # 存放靜態資源，例如圖片、字體、全域 CSS
+    │   ├── components/      # 存放可重用的 UI 組件
+    │   │   ├── base/        # 基礎組件 (如：按鈕、輸入框)
+    │   │   └── common/      # 通用組件
+    │   ├── router/          # Vue Router 設定，管理所有頁面路由
+    │   ├── services/        # 封裝與後端 API 互動的邏輯
+    │   │   └── api.js       # 處理資料請求與響應的通用方法
+    │   ├── store/           # Vuex 或 Pinia 狀態管理，類似後端的資料中心
+    │   ├── utils/           # 存放通用工具函數 (如：日期格式化、表單驗證)
+    │   ├── views/           # 存放頁面級組件，透過路由切換
+    │   │   ├── HomeView.vue # 首頁
+    │   │   └── LoginView.vue# 登入頁
+    │   └── App.vue          # 應用程式的根組件
+    ├── .gitignore           # Git 忽略提交檔案設定
+    └── package.json         # npm 專案管理檔，定義依賴與腳本
