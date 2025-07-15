@@ -1,5 +1,6 @@
 📁 專案目錄結構說明
 csharp
+```
 複製
 編輯
 project/                     # 專案根目錄
@@ -43,3 +44,4 @@ project/                     # 專案根目錄
     │   └── App.vue          # 應用程式的根組件
     ├── .gitignore           # Git 忽略提交檔案設定
     └── package.json         # npm 專案管理檔，定義依賴與腳本
+```
